@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 basedir =os.path.abspath(os.path.dirname(__file__))
 
+
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'data.sqlite') #sets up db locatin
@@ -15,7 +17,7 @@ class character(db.Model):
     __tablename__ = 'character'
 
 
-    id = db.Column(db.Interger,primary_key = True)
+    id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.Text)
     characters = db.Column(db.Text)
 
