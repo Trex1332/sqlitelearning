@@ -14,3 +14,4 @@ with app.app_context():
     all = whowhatwhere.query.all()
     for i in all:
         print(i)
+        print(" \n")
