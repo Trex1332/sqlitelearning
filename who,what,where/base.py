@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 class whowhatwhere(db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
-    name = db.Colum(db.Text)
+    name = db.Column(db.Text)
     game = db.Column(db.Text)
     character = db.Column(db.Text)
 
@@ -26,4 +26,4 @@ class whowhatwhere(db.Model):
         self.character = character
 
     def __repr__(self):
-        return f"Name is {self.name}, Their Favorite character is from {self.game}, the character is {self,character}"
+        return f"Name is {self.name}, Their Favorite character is from {self.game}, the character is {self.character}"
