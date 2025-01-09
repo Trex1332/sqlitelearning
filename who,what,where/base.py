@@ -23,10 +23,12 @@ class whowhatwhere(db.Model):
     name = db.Column(db.Text)
     game = db.Column(db.Text)
     character = db.Column(db.Text)
+    gender = db.Column(db.Text)
 
-    def __init__(self,name,game,character):
+    def __init__(self,name,game,character,gender):
         self.name = name
         self.game = game
+        self.character = character
         self.character = character
 
     def __repr__(self):
