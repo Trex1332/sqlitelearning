@@ -24,7 +24,7 @@ class books(db.Model):
     #one to one
     owner = db.relationship('person',backref='books',uselist=False)
 
-    def __init__(self,name)
+    def __init__(self,name):
         self.name = name
 
     def __repr__(self):
@@ -43,7 +43,7 @@ class source(db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
     sourcename = db.Column(db.Text)
-    bookid = db.Column(db.Integer,db.Foreignkey('books.id'))
+    bookid = db.Column(db.Integer,db.ForeignKey('books.id'))
 
     def __init__(self,sourename,bookid):
         self.sourcename = sourename
@@ -57,7 +57,7 @@ class person(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.Text)
 
-    book_id = db.Colum(db.Integrt,db.Foreignkey('books.id'))
+    book_id = db.Column(db.Integer,db.ForeignKey('books.id'))
 
     def __init__(self,name,book_id):
         self.name = name
